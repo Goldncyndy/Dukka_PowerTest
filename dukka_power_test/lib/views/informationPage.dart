@@ -1,3 +1,4 @@
+import 'package:dukka_power_test/controllers/drawer.dart';
 import 'package:flutter/material.dart';
 import '../models/employee_model.dart';
 import '../models/database_model.dart';
@@ -56,11 +57,7 @@ class _infopageState extends State<infopage> {
           iconTheme: IconThemeData(color: Colors.black),
         ),
       ),
-      drawer: Drawer(
-        child: Container(
-          color: Colors.black,
-        ),
-      ),
+      drawer: MainDrawer(),
       body: Padding(
         padding: const EdgeInsets.fromLTRB(10.0, 0.0, 10.0, 0.0),
         child: Column(

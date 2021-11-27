@@ -1,3 +1,4 @@
+import 'package:dukka_power_test/controllers/drawer.dart';
 import 'package:dukka_power_test/views/employeesForm.dart';
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
@@ -58,11 +59,7 @@ class _HomeState extends State<Home> {
             iconTheme: IconThemeData(color: Colors.black),
           ),
         ),
-        drawer: Drawer(
-          child: Container(
-            color: Colors.black,
-          ),
-        ),
+        drawer: MainDrawer(),
         body: SingleChildScrollView(
           child: Column(
             children: [EmployeesForm(insertFunction: addItem)],

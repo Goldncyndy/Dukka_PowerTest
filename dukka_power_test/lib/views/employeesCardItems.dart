@@ -51,6 +51,9 @@ class _EmployeesState extends State<Employees> {
               context,
               MaterialPageRoute(builder: (context) => EmployeeDetail(
                 fullname: widget.fullname,
+                email: widget.email,
+                position: widget.position,
+                phoneNumber: widget.phoneNumber,
               )),
             );
           },

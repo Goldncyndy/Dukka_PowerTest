@@ -1,3 +1,4 @@
+import 'package:dukka_power_test/controllers/drawer.dart';
 import 'package:dukka_power_test/views/informationPage.dart';
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
@@ -7,7 +8,15 @@ import '../models/database_model.dart';
 
 class EmployeeDetail extends StatelessWidget {
   final String fullname;
-  const EmployeeDetail({Key? key, required this.fullname}) : super(key: key);
+  final String email;
+  final String phoneNumber;
+  final String position;
+  const EmployeeDetail({Key? key,
+    required this.fullname,
+    required this.email,
+    required this.phoneNumber,
+    required this.position
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -40,11 +49,7 @@ class EmployeeDetail extends StatelessWidget {
           iconTheme: IconThemeData(color: Colors.black),
         ),
       ),
-      drawer: Drawer(
-        child: Container(
-          color: Colors.black,
-        ),
-      ),
+      drawer: MainDrawer(),
       body: SingleChildScrollView(
         child: SafeArea(
           child: Padding(
@@ -79,14 +84,14 @@ class EmployeeDetail extends StatelessWidget {
                         ),
                         SizedBox(height: 8),
                         Text(
-                          'Position',
+                          '$position',
                           style: TextStyle(
                           fontWeight: FontWeight.normal,
                           fontSize: 18,
                             ),
                           ),
                         Text(
-                            'PhoneNumber',
+                            '$phoneNumber',
                           style: TextStyle(
                            fontWeight: FontWeight.normal,
                           fontSize: 18,
@@ -94,7 +99,7 @@ class EmployeeDetail extends StatelessWidget {
                         ),
                         SizedBox(height: 8.0),
                         Text(
-                         'Email',
+                         '$email',
                           style: TextStyle(
                             fontWeight: FontWeight.normal,
                             fontSize: 18,
