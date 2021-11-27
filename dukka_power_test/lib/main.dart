@@ -1,3 +1,4 @@
+import 'package:dukka_power_test/views/informationPage.dart';
 import 'package:flutter/material.dart';
 import 'views/home.dart';
 
@@ -18,7 +19,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Home(),
+      home: infopage(),
     );
   }
 }

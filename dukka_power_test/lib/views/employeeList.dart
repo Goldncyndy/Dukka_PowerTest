@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import '/views/employeesCard.dart';
+import '/views/employeesCardItems.dart';
 import '../models/database_model.dart';
+import "package:hovering/hovering.dart";
 
 
 class EmployeeList extends StatelessWidget {
