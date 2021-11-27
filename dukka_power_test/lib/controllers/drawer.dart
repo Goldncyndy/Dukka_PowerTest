@@ -1,5 +1,5 @@
 import 'package:dukka_power_test/views/home.dart';
-import 'package:dukka_power_test/views/informationPage.dart';
+import 'package:dukka_power_test/views/employeesRecords.dart';
 import 'package:flutter/material.dart';
 
 class MainDrawer extends StatelessWidget {
@@ -10,62 +10,55 @@ class MainDrawer extends StatelessWidget {
     return Drawer(
       child: Container(
         color: Colors.black,
-        child: ListView(
-            padding: EdgeInsets.zero,
+        child: ListView(padding: EdgeInsets.zero, children: [
+          Column(
             children: [
-
-              Column(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(50.0, 50.0, 50.0, 0.0),
-                    child: Center(
-                      child: CircleAvatar(
-                        backgroundImage: AssetImage('images/anime.png'),
-                        radius: 60.0,
-                      ),
-                    ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(50.0, 50.0, 50.0, 0.0),
+                child: Center(
+                  child: CircleAvatar(
+                    backgroundImage: AssetImage('images/anime.png'),
+                    radius: 60.0,
                   ),
-                  DrawerHeader(
-                      child: Text("SAMASYS", style: TextStyle(
-                          color: Colors.white,
-                          letterSpacing: 2.0,
-                          fontSize: 20.0
-                      ),)),
-                ],
+                ),
               ),
-
-              Column(
-                children: [
-                  ListTile(
-                    title: TextButton(
-                      onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => Home()),
-                      );
-                    },
-                      child: Text("Home Page",
-                          style: TextStyle(
-                              color: Colors.white,
-                              letterSpacing: 2.0
-                          )),
-                    ),
-                    subtitle: TextButton(
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => infopage()),
-                        );
-                      },
-                      child: Text("Employees Page",
-                          style: TextStyle(
-                              color: Colors.white,
-                              letterSpacing: 2.0
-                          )),
-                    ),),
-                ],
-              )
-            ]),
+              DrawerHeader(
+                  child: Text(
+                "SAMASYS",
+                style: TextStyle(
+                    color: Colors.white, letterSpacing: 2.0, fontSize: 20.0),
+              )),
+            ],
+          ),
+          Column(
+            children: [
+              ListTile(
+                title: TextButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Home()),
+                    );
+                  },
+                  child: Text("Home Page",
+                      style:
+                          TextStyle(color: Colors.white, letterSpacing: 2.0)),
+                ),
+                subtitle: TextButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => infopage()),
+                    );
+                  },
+                  child: Text("Employees Page",
+                      style:
+                          TextStyle(color: Colors.white, letterSpacing: 2.0)),
+                ),
+              ),
+            ],
+          )
+        ]),
       ),
     );
   }

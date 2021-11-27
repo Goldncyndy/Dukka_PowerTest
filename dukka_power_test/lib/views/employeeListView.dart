@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import '/views/employeesCardItems.dart';
 import '../models/database_model.dart';
-import "package:hovering/hovering.dart";
 
 
 class EmployeeList extends StatelessWidget {
+
   // create an object of database connect
   var database = DatabaseConnect();
   final Function insertFunction;

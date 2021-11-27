@@ -1,4 +1,4 @@
-import 'package:dukka_power_test/views/informationPage.dart';
+import 'package:dukka_power_test/views/employeesRecords.dart';
 import 'package:flutter/material.dart';
 import 'views/home.dart';
 
@@ -14,12 +14,11 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: infopage(),
+      home: Home(),
     );
   }
 }

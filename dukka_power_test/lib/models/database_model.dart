@@ -3,9 +3,9 @@ import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
 import './employee_model.dart';
 
-
 class DatabaseConnect {
   Database? _database;
+
   Future<Database> get database async {
     final databasePath = await getDatabasesPath();
     const databaseName = 'employee.db';
@@ -13,6 +13,7 @@ class DatabaseConnect {
     _database = await openDatabase(path, version: 1, onCreate: _createDb);
     return _database!;
   }
+
   Future<void> _createDb(Database db, int version) async {
     await db.execute('''
        CREATE TABLE employee(
@@ -32,9 +33,7 @@ class DatabaseConnect {
     await db.insert(
       'employee',
       employee.toMap(),
-      conflictAlgorithm: ConflictAlgorithm
-          .replace,
-
+      conflictAlgorithm: ConflictAlgorithm.replace,
     );
   }
 
@@ -44,23 +43,22 @@ class DatabaseConnect {
       'employee',
       where: 'id == ? ',
       whereArgs: [employee.id],
-
     );
   }
+
   Future<List<Employee>> getEmployee() async {
-    final db = await database ;
+    final db = await database;
     List<Map<String, dynamic>> items = await db.query(
       'employee',
       orderBy: 'id Desc',
     );
-
     return List.generate(
       items.length,
-          (i) => Employee(
+      (i) => Employee(
         id: items[i]['id'],
         fullname: items[i]['fullname'],
         phoneNumber: items[i]['phoneNumber'],
-        email:  items[i]['email'],
+        email: items[i]['email'],
         position: items[i]['position'],
         salary: items[i]['salary'],
       ),
@@ -68,17 +66,14 @@ class DatabaseConnect {
   }
   // function to fetch all employee from the database
   Future<List<Employee>> getAllEmployee() async {
-    final db = await database ;
+    final db = await database;
     // query the database and save the employee as list of maps
-    List<Map<String, dynamic>> items = await db.query(
-        'employee',
-        orderBy: 'id Desc',
-        where: 'isChecked == 1 '
-    );
+    List<Map<String, dynamic>> items = await db.query('employee',
+        orderBy: 'id Desc', where: 'isChecked == 1 ');
 
     return List.generate(
       items.length,
-          (i) => Employee(
+      (i) => Employee(
         id: items[i]['id'],
         fullname: items[i]['fullname'],
         phoneNumber: items[i]['phoneNumber'],

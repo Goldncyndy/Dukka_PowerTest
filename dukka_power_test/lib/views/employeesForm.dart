@@ -1,4 +1,4 @@
-import 'package:dukka_power_test/views/informationPage.dart';
+import 'package:dukka_power_test/views/employeesRecords.dart';
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
 import '../models/employee_model.dart';
@@ -12,8 +12,6 @@ class EmployeesForm extends StatelessWidget {
   static final RegExp nameRegExp = RegExp(r'^[a-z A-Z]+$');
   static final RegExp numberRegExp =
       RegExp(r'^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$');
-
-  // static final RegExp emailRegExp = RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$');
 
   var nameController = TextEditingController();
   var emailController = TextEditingController();
@@ -63,7 +61,6 @@ class EmployeesForm extends StatelessWidget {
                       decoration: InputDecoration(
                         border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(8.0)),
-
                       ),
                     ),
                     SizedBox(height: 20.0),

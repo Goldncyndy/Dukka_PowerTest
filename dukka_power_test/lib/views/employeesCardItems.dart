@@ -1,7 +1,6 @@
-import 'package:dukka_power_test/views/employee_details.dart';
+import 'package:dukka_power_test/views/employeeDetails.dart';
 import 'package:flutter/material.dart';
 import '../models/employee_model.dart';
-import 'home.dart';
 
 class Employees extends StatefulWidget {
   final int id;
@@ -12,7 +11,6 @@ class Employees extends StatefulWidget {
   final String salary;
   Function insertFunction;
   Function deleteFunction;
-
 
   Employees(
       {required this.id,
@@ -25,6 +23,32 @@ class Employees extends StatefulWidget {
       required this.deleteFunction,
       Key? key})
       : super(key: key);
+
+  showAlertDialog(BuildContext context) {
+
+    // set up the button
+    Widget okButton = TextButton(
+      child: Text("OK"),
+      onPressed: () { Navigator.of(context).pop(); },
+    );
+
+    // set up the AlertDialog
+    AlertDialog alert = AlertDialog(
+      title: Text("Message"),
+      content: Text("This feature is not available at the moment."),
+      actions: [
+        okButton,
+      ],
+    );
+
+    // show the dialog
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return alert;
+      },
+    );
+  }
 
   @override
   _EmployeesState createState() => _EmployeesState();
@@ -49,12 +73,13 @@ class _EmployeesState extends State<Employees> {
           onTap: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => EmployeeDetail(
-                fullname: widget.fullname,
-                email: widget.email,
-                position: widget.position,
-                phoneNumber: widget.phoneNumber,
-              )),
+              MaterialPageRoute(
+                  builder: (context) => EmployeeDetail(
+                        fullname: widget.fullname,
+                        email: widget.email,
+                        position: widget.position,
+                        phoneNumber: widget.phoneNumber,
+                      )),
             );
           },
           child: Row(
@@ -109,7 +134,7 @@ class _EmployeesState extends State<Employees> {
                         IconButton(
                             onPressed: () {
                               // add delete method
-                              //widget.editFunction(anEmployee);
+                              widget.showAlertDialog(context);
                             },
                             icon: Icon(Icons.edit)),
                         SizedBox(width: 10.0),
