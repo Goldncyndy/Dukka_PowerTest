@@ -1,4 +1,4 @@
-import 'package:dukka_power_test/views/employeeDetails.dart';
+import 'package:dukka_power_test/views/employee_details.dart';
 import 'package:flutter/material.dart';
 import '../models/employee_model.dart';
 
@@ -55,9 +55,13 @@ class Employees extends StatefulWidget {
 }
 
 class _EmployeesState extends State<Employees> {
+
+  var color = Colors.transparent;
+
   @override
   Widget build(BuildContext context) {
     bool showEditButton = false;
+
     // create local employee
     var anEmployee = Employee(
         id: widget.id,
@@ -81,6 +85,19 @@ class _EmployeesState extends State<Employees> {
                         phoneNumber: widget.phoneNumber,
                       )),
             );
+          },
+          onHover: (value) {
+            if (value) {
+              //The mouse is hovering.
+              setState(() {
+
+              });
+            } else {
+              //The mouse is no longer hovering.
+              setState(() {
+
+              });
+            }
           },
           child: Row(
             children: [
@@ -128,23 +145,33 @@ class _EmployeesState extends State<Employees> {
                       ),
                     ),
                     SizedBox(height: 8.0),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        IconButton(
-                            onPressed: () {
-                              // add delete method
-                              widget.showAlertDialog(context);
-                            },
-                            icon: Icon(Icons.edit)),
-                        SizedBox(width: 10.0),
-                        IconButton(
-                            onPressed: () {
-                              // add delete method
-                              widget.deleteFunction(anEmployee);
-                            },
-                            icon: Icon(Icons.close)),
-                      ],
+                Theme(
+                  data: Theme.of(context).copyWith(
+                    highlightColor: color,
+                    splashColor: color,
+                    hoverColor: color,
+                  ),
+                      child: Padding(
+                        padding: const EdgeInsets.fromLTRB(110.0, 0.0, 10.0, 0.0),
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          children: [
+                            IconButton(
+                                onPressed: () {
+                                  // add delete method
+                                  widget.showAlertDialog(context);
+                                },
+                                icon: Icon(Icons.edit)),
+                            SizedBox(width: 10.0),
+                            IconButton(
+                                onPressed: () {
+                                  // add delete method
+                                  widget.deleteFunction(anEmployee);
+                                },
+                                icon: Icon(Icons.delete)),
+                          ],
+                        ),
+                      ),
                     ),
                   ],
                 ),

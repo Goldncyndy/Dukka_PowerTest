@@ -1,14 +1,15 @@
-import 'package:dukka_power_test/controllers/appBarController.dart';
+import 'package:dukka_power_test/controllers/app_bar_controller.dart';
 import 'package:dukka_power_test/controllers/drawer.dart';
 import 'package:flutter/material.dart';
 
-
+// set up the variables to enable data passing
 class EmployeeDetail extends StatelessWidget {
   final String fullname;
   final String email;
   final String phoneNumber;
   final String position;
 
+  // set up constructors for the declared variables
   const EmployeeDetail(
       {Key? key,
       required this.fullname,
@@ -129,22 +130,25 @@ class EmployeeDetail extends StatelessWidget {
                               children: [
                                 Text('BORROWED:     #50,000'),
                                 //SizedBox(width: 20.0),
-                                Divider(
-                                  height: 30.0,
-                                  color: Colors.black,
+                                Container(
+                                  child: Divider(
+                                    height: 30.0,
+                                    color: Colors.black,
+                                    thickness: 2,
+                                  ),
                                 ),
-                                Text('BORROWED:      #50,000'),
+                                Text('RECEIVABLE:      #100,000'),
                                 //SizedBox(width: 20.0),
                               ],
                             ),
                           ],
                         ),
                       ),
-                      SizedBox(height: 10.0),
+                      SizedBox(height: 5.0),
                     ],
                   ),
                 ),
-                SizedBox(height: 30.0),
+                SizedBox(height: 10.0),
                 Container(
                   margin: const EdgeInsets.all(15.0),
                   padding: const EdgeInsets.all(3.0),
@@ -164,7 +168,7 @@ class EmployeeDetail extends StatelessWidget {
                                 onPressed: () {},
                                 icon: Icon(Icons.calendar_today)),
                             Text(
-                              'FEB',
+                              'JAN',
                               style: TextStyle(
                                   color: Colors.black,
                                   fontSize: 20.0,
@@ -184,9 +188,9 @@ class EmployeeDetail extends StatelessWidget {
                                 Divider(
                                   height: 30.0,
                                   color: Colors.black,
+                                  thickness: 2,
                                 ),
-                                Text('BORROWED:      #50,000'),
-                                //SizedBox(width: 20.0),
+                                Text('RECEIVABLE:      #100,000'),
                               ],
                             ),
                           ],
@@ -196,7 +200,13 @@ class EmployeeDetail extends StatelessWidget {
                     ],
                   ),
                 ),
-                SizedBox(height: 30.0),
+                SizedBox(height: 20.0),
+                Text('2019',
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 20.0,
+                        fontWeight: FontWeight.normal)),
+                SizedBox(height: 20.0),
                 Container(
                   margin: const EdgeInsets.all(15.0),
                   padding: const EdgeInsets.all(3.0),
@@ -216,7 +226,7 @@ class EmployeeDetail extends StatelessWidget {
                                 onPressed: () {},
                                 icon: Icon(Icons.calendar_today)),
                             Text(
-                              'FEB',
+                              'DEC',
                               style: TextStyle(
                                   color: Colors.black,
                                   fontSize: 20.0,
@@ -236,19 +246,20 @@ class EmployeeDetail extends StatelessWidget {
                                 Divider(
                                   height: 30.0,
                                   color: Colors.black,
+                                  thickness: 2,
                                 ),
-                                Text('BORROWED:      #50,000'),
+                                Text('RECEIVABLE:      #100,000'),
                                 //SizedBox(width: 20.0),
                               ],
                             ),
                           ],
                         ),
                       ),
-                      SizedBox(height: 10.0),
+                      SizedBox(height: 8.0),
                     ],
                   ),
                 ),
-                SizedBox(height: 30.0),
+                SizedBox(height: 10.0),
                 Container(
                   margin: const EdgeInsets.all(15.0),
                   padding: const EdgeInsets.all(3.0),
@@ -268,7 +279,7 @@ class EmployeeDetail extends StatelessWidget {
                                 onPressed: () {},
                                 icon: Icon(Icons.calendar_today)),
                             Text(
-                              'FEB',
+                              'NOV',
                               style: TextStyle(
                                   color: Colors.black,
                                   fontSize: 20.0,
@@ -288,8 +299,9 @@ class EmployeeDetail extends StatelessWidget {
                                 Divider(
                                   height: 30.0,
                                   color: Colors.black,
+                                  thickness: 2,
                                 ),
-                                Text('BORROWED:      #50,000'),
+                                Text('RECEIVABLE:      #100,000'),
                                 //SizedBox(width: 20.0),
                               ],
                             ),

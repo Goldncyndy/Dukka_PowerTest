@@ -1,4 +1,4 @@
-import 'package:dukka_power_test/views/employeesRecords.dart';
+import 'package:dukka_power_test/views/employees_records.dart';
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
 import '../models/employee_model.dart';
@@ -13,6 +13,7 @@ class EmployeesForm extends StatelessWidget {
   static final RegExp numberRegExp =
       RegExp(r'^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$');
 
+  // set variables to collect user input
   var nameController = TextEditingController();
   var emailController = TextEditingController();
   var phoneController = TextEditingController();

@@ -1,5 +1,5 @@
 import 'package:dukka_power_test/views/home.dart';
-import 'package:dukka_power_test/views/employeesRecords.dart';
+import 'package:dukka_power_test/views/employees_records.dart';
 import 'package:flutter/material.dart';
 
 class MainDrawer extends StatelessWidget {

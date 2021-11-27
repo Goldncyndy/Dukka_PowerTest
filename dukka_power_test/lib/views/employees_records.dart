@@ -1,9 +1,9 @@
-import 'package:dukka_power_test/controllers/appBarController.dart';
+import 'package:dukka_power_test/controllers/app_bar_controller.dart';
 import 'package:dukka_power_test/controllers/drawer.dart';
 import 'package:flutter/material.dart';
 import '../models/employee_model.dart';
 import '../models/database_model.dart';
-import '../views/employeeListView.dart';
+import '../views/employee_listview.dart';
 
 class infopage extends StatefulWidget {
   const infopage({Key? key}) : super(key: key);
@@ -16,11 +16,13 @@ class _infopageState extends State<infopage> {
   var textController = TextEditingController();
   var database = DatabaseConnect();
 
+  // set up the function to add an employee info to database
   void addItem(Employee employee) async {
     await database.insertEmployee(employee);
     setState(() {});
   }
 
+  // set up the function to delete an employee info from database
   void deleteItem(Employee employee) async {
     await database.deleteEmployee(employee);
     setState(() {});
