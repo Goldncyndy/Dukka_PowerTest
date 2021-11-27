@@ -21,14 +21,14 @@ class DatabaseConnect {
        phoneNumber TEXT,
        email TEXT,
        position TEXT,
-       salary TEXT,
+       salary TEXT
            )
    ''');
   }
 
   Future<void> insertEmployee(Employee employee) async {
     final db = await database;
-    //insert  the Eeployee
+    //insert  the Employee
     await db.insert(
       'employee',
       employee.toMap(),

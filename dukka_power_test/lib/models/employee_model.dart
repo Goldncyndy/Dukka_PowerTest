@@ -19,7 +19,7 @@ class Employee {
   Map<String, dynamic> toMap(){
     return {
       'id': id,
-      'title' : fullname,
+      'fullname' : fullname,
       'phoneNumber': phoneNumber,
       'email': email,
       'position': position,
